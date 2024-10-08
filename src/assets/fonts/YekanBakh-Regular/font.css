@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'YekanBakh-Regular';
+    src: url('./@font-face/7296ae79f6faca68798b00fbbbee4c22.eot'); /* IE9*/
+    src: url('./@font-face/7296ae79f6faca68798b00fbbbee4c22.eot?#iefix')
+            format('embedded-opentype'),
+        /* IE6-IE8 */ url('./@font-face/7296ae79f6faca68798b00fbbbee4c22.woff2')
+            format('woff2'),
+        /* chrome、firefox */
+            url('./@font-face/7296ae79f6faca68798b00fbbbee4c22.woff')
+            format('woff'),
+        /* chrome、firefox */
+            url('./@font-face/7296ae79f6faca68798b00fbbbee4c22.ttf')
+            format('truetype'),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('./@font-face/7296ae79f6faca68798b00fbbbee4c22.svg#YekanBakh-Regular')
+            format('svg'); /* iOS 4.1- */
+}
