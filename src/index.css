@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import "~antd/dist/reset.css"; */
+
+@font-face {
+  font-family: "YekanBakh-Regular";
+  src: url("../src/assets/fonts/YekanBakh-Regular/@font-face/7296ae79f6faca68798b00fbbbee4c22.eot");
+  /* IE9*/
+  src: url("../src/assets/fonts/yekanBakh-Regular/@font-face/7296ae79f6faca68798b00fbbbee4c22.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../src/assets/fonts/yekanBakh-Regular/@font-face/7296ae79f6faca68798b00fbbbee4c22.woff2")
+      format("woff2"),
+    /* chrome、firefox */
+      url("../src/assets/fonts/yekanBakh-Regular/@font-face/7296ae79f6faca68798b00fbbbee4c22.woff")
+      format("woff"),
+    /* chrome、firefox */
+      url("../src/assets/fonts/yekanBakh-Regular/@font-face/7296ae79f6faca68798b00fbbbee4c22.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("../src/assets/fonts/yekanBakh-Regular/@font-face/7296ae79f6faca68798b00fbbbee4c22.svg#YekanBakh-Regular")
+      format("svg");
+  /* iOS 4.1- */
+}
+
+@font-face {
+  font-family: "YekanBakh-Medium";
+  src: url("../src/assets/fonts/YekanBakh-Medium/@font-face/b4970ca649486b095a2e59e0cb7c7663.eot");
+  /* IE9*/
+  src: url("../src/assets/fonts/YekanBakh-Medium/@font-face/b4970ca649486b095a2e59e0cb7c7663.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../src/assets/fonts/YekanBakh-Medium/@font-face/b4970ca649486b095a2e59e0cb7c7663.woff2")
+      format("woff2"),
+    /* chrome、firefox */
+      url("../src/assets/fonts/YekanBakh-Medium/@font-face/b4970ca649486b095a2e59e0cb7c7663.woff")
+      format("woff"),
+    /* chrome、firefox */
+      url("../src/assets/fonts/YekanBakh-Medium/@font-face/b4970ca649486b095a2e59e0cb7c7663.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("../src/assets/fonts/YekanBakh-Medium/@font-face/b4970ca649486b095a2e59e0cb7c7663.svg#YekanBakh-Medium")
+      format("svg");
+  /* iOS 4.1- */
+}
+
+@font-face {
+  font-family: "YekanBakh-Bold";
+  src: url("../src/assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.eot");
+  /* IE9*/
+  src: url("../src/assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../src/assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.woff2")
+      format("woff2"),
+    /* chrome、firefox */
+      url("../src/assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.woff")
+      format("woff"),
+    /* chrome、firefox */
+      url("../src/assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("../src/assets/fonts/YekanBakh-Bold/@font-face/41e49eab42867016423011dccc96c22a.svg#YekanBakh-Bold")
+      format("svg");
+  /* iOS 4.1- */
+}
+
+:root {
+  --p-text: #191919;
+  --p-body-text: #191919;
+  --p-faded-text: #7d7d7d;
+  --p-gray: #f2f2f2;
+  --p-border-gray: #b4b4b4;
+  --p-primary: #0369a1;
+  --p-secondary: #1690c9;
+  --p-bg-color: #ffffff;
+  --p-input-Color: #6180bb;
+  --p-success: #52c41a;
+}
+
+html,
+body {
+  width: 100% !important;
+  height: 100%;
+  direction: rtl;
+  text-align: right;
+  font-family: YekanBakh-Medium !important;
+}
+
+* {
+  font-family: YekanBakh-Medium !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f500;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f500;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #d8d8d8;
+}
+
+p,
+span,
+div {
+  color: inherit;
+  /* direction: rtl; */
+}
+
+body {
+  background-color: var(--p-bg-color) !important;
+}
+svg {
+  vertical-align: baseline;
+}
+.rtl-grid,
+.ant-form-rtl .ant-form-item-label {
+  /* direction: rtl !important; */
+  text-align: right !important;
+}
+.ant-form-item-label {
+  text-align: left !important;
+}
+.ant-input,
+.ant-input-rtl,
+.ant-input-outlined {
+  font-family: YekanBakh-Medium !important;
+  box-sizing: border-box !important;
+}
+.ant-tabs-nav {
+  padding-right: 40px;
+}
+@media print {
+  * {
+    visibility: hidden;
+  }
+  .printable {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10mm;
+  }
+  .printable * {
+    visibility: visible;
+  }
+}
+
+.sider-right .ant-layout-sider-zero-width-trigger-left,
+.sider-right .ant-layout-sider-zero-width-trigger {
+  left: -36px;
+  right: auto;
+  border-radius: 10px 0 0 10px;
+  z-index: 1000;
+}
+.sidebar-menu::-webkit-scrollbar {
+  display: none !important;
+}
+.sidebar-menu {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+.ant-slider .ant-slider-rail {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.ant-tabs-tab {
+  margin: 5px 0px 0px 32px !important;
+  padding: 10px !important;
+}
+
+.ant-form-item-explain,
+.ant-form-item-extra,
+.ant-form-item-explain-error {
+  font-family: YekanBakh-Medium !important;
+  color: #d9534f;
+  font-size: 14px;
+}
+.ant-form-item-label > label {
+  font-family: YekanBakh-Medium !important;
+  font-size: 16px;
+}
+.ant-btn {
+  font-family: YekanBakh-Medium !important;
+}
+.ant-form-item-control-input {
+  font-family: YekanBakh-Medium !important;
+  font-size: 14px;
+}
+.ant-upload-wrapper .ant-upload-select {
+  display: block !important;
+}
+.attachments {
+  max-height: 100px; /* Adjust height as needed */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-upload-list-item:hover {
+  color: #4c8fed !important;
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+.disable-scrollbar::-webkit-scrollbar {
+  display: none;
+}
