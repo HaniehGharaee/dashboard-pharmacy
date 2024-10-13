@@ -1,5 +1,9 @@
 import { Card, Col, Row } from "antd";
 import "./card.less";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import { drugsIcon } from "src/assets/icons/index";
+import { instockIcon } from "src/assets/icons/index";
 
 const CardsDashboatds = () => {
   const colProps = {
@@ -19,8 +23,13 @@ const CardsDashboatds = () => {
         <Col {...colProps}>
           <Card
             title="داروهای منقضی شده"
-            bordered={false}
-            extra={<div className="square1 mb-3"></div>}
+            bordered={true}
+            className="border-white-900 rounded-lg"
+            extra={
+              <div className="square1 mb-3 flex items-center justify-center">
+                <CalendarMonthIcon sx={{ fontSize: 35 }} />
+              </div>
+            }
           >
             <div
               style={{ textAlign: "left", color: "blue", marginTop: "auto" }}
@@ -32,8 +41,13 @@ const CardsDashboatds = () => {
         <Col {...colProps}>
           <Card
             title="سهام دارو"
-            bordered={false}
-            extra={<div className="square2 mb-3"></div>}
+            bordered={true}
+            className="border-white-900 rounded-lg"
+            extra={
+              <div className="square2 mb-3 flex items-center justify-center">
+                <img src={instockIcon} alt="stock Icon" className="h-10 w-10" />
+              </div>
+            }
           >
             <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
           </Card>
@@ -41,8 +55,13 @@ const CardsDashboatds = () => {
         <Col {...colProps}>
           <Card
             title="کل داروها"
-            bordered={false}
-            extra={<div className="square3 mb-3"></div>}
+            bordered={true}
+            className="border-white-900 rounded-lg"
+            extra={
+              <div className="square3 mb-3 flex items-center justify-center">
+                <img src={drugsIcon} alt="Drugs Icon" className="h-10 w-10" />
+              </div>
+            }
           >
             <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
           </Card>
@@ -50,8 +69,13 @@ const CardsDashboatds = () => {
         <Col {...colProps}>
           <Card
             title="کل فروش"
-            bordered={false}
-            extra={<div className="square4 mb-3"></div>}
+            bordered={true}
+            className="border-white-900 rounded-lg"
+            extra={
+              <div className="square4 mb-3 flex items-center justify-center">
+                <MonetizationOnOutlinedIcon sx={{ fontSize: 35 }} />
+              </div>
+            }
           >
             <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
           </Card>
