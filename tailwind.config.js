@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#5a03d5",
+        primary: "",
       },
       fontFamily: {
         yekanBakhRegular: ["YekanBakh-Regular", "sans-serif"],
@@ -31,12 +31,12 @@ module.exports = {
       },
     },
 
-    backgroundImage: {
-      MainSection: "url('./app/assets/images/main-banner.png')",
-      CategoryCard: "url('./app/assets/images/icon-background.png')",
-      "primary-gradient": "linear-gradient(90deg, #1c73d4 0%, #419cff 100%)",
-      "danger-gradient": "linear-gradient(90deg, #ff0056 0%, #ff4785 100%)",
-    },
+    // backgroundImage: {
+    //   MainSection: "url('./app/assets/images/main-banner.png')",
+    //   CategoryCard: "url('./app/assets/images/icon-background.png')",
+    //   "primary-gradient": "linear-gradient(90deg, #1c73d4 0%, #419cff 100%)",
+    //   "danger-gradient": "linear-gradient(90deg, #ff0056 0%, #ff4785 100%)",
+    // },
   },
   variants: {
     extend: {},
