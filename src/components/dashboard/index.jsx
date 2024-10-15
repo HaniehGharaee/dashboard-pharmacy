@@ -1,10 +1,12 @@
-import CardsDashboatds from './card'
-import PieChart from './chart'
+import CardsDashboatds from "./card";
+import PieChart from "./chart";
 const Dashboard = () => {
   return (
     <>
       <CardsDashboatds />
-      <PieChart/>
+      <div className="mt-10">
+        <PieChart/>
+      </div>
     </>
   );
 };
