@@ -1,12 +1,13 @@
 import * as React from "react";
+import { Card, Col, Row } from "antd";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts/LineChart";
 
 export default function BasicPie() {
   return (
-    <>
-      <div className="mt-10 bg-slate-600 w-1/2 mr-3 rounded">
+    <Row className="grid grid-cols-2 gap-0">
+      <div className="mt-10 bg-slate-600 w-auto mr-3 h-80 pt-20 rounded">
         <PieChart
           series={[
             {
@@ -17,11 +18,11 @@ export default function BasicPie() {
               ],
             },
           ]}
-          width={700}
+          width={400}
           height={200}
         />
       </div>
-      <div className="mt-10 bg-slate-600 w-1/2 mr-3 rounded">
+      <div className="mt-10 bg-slate-600 w-auto mr-3 rounded">
         <BarChart
           xAxis={[
             { scaleType: "band", data: ["group A", "group B", "group C"] },
@@ -31,11 +32,11 @@ export default function BasicPie() {
             { data: [1, 6, 3] },
             { data: [2, 5, 6] },
           ]}
-          width={500}
+          width={400}
           height={300}
         />
       </div>
-      <div className="mt-10 bg-slate-600 w-1/2 mr-3 mb-4 rounded h-80 pt-20">
+      <div className="mt-10 bg-slate-600 w-auto mr-3 h-80 pt-20 rounded">
         <LineChart
           xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
           series={[
@@ -57,6 +58,6 @@ export default function BasicPie() {
           margin={{ top: 10, bottom: 20 }}
         />
       </div>
-    </>
+    </Row>
   );
 }
