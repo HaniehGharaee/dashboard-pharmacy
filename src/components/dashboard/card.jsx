@@ -4,6 +4,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import { drugsIcon } from "src/assets/icons/index";
 import { instockIcon } from "src/assets/icons/index";
+const { Meta } = Card;
 
 const CardsDashboatds = () => {
   const colProps = {
@@ -31,6 +32,7 @@ const CardsDashboatds = () => {
               </div>
             }
           >
+            <Meta title="191" />
             <div
               style={{ textAlign: "left", color: "blue", marginTop: "auto" }}
             >
@@ -49,6 +51,7 @@ const CardsDashboatds = () => {
               </div>
             }
           >
+            <Meta title="691" />
             <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
           </Card>
         </Col>
@@ -63,6 +66,7 @@ const CardsDashboatds = () => {
               </div>
             }
           >
+            <Meta title="812" />
             <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
           </Card>
         </Col>
@@ -77,6 +81,7 @@ const CardsDashboatds = () => {
               </div>
             }
           >
+            <Meta title="261" />
             <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
           </Card>
         </Col>
