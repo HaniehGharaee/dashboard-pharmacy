@@ -4,8 +4,8 @@ const Dashboard = () => {
   return (
     <>
       <CardsDashboatds />
-      <div className="mt-10">
-        <PieChart/>
+      <div className="mt-10 mb-8">
+        <PieChart />
       </div>
     </>
   );
