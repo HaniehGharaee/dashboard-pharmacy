@@ -3,6 +3,7 @@ import { Card, Col, Row } from "antd";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts/LineChart";
+import ReportTable from "./Today'sReport";
 
 export default function BasicPie() {
   return (
@@ -57,6 +58,9 @@ export default function BasicPie() {
           height={200}
           margin={{ top: 10, bottom: 20 }}
         />
+      </div>
+      <div className="w-auto mr-3 rounded">
+        <ReportTable />
       </div>
     </Row>
   );
