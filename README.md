@@ -1,3 +1,3 @@
 For Run this project : 
-yarn install
+yarn install,
 yarn dev
