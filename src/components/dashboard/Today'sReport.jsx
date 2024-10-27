@@ -36,7 +36,7 @@ const data = [
 ];
 const ReportTable = () => (
   <Table
-    className="mt-10 w-[800px]"
+    className="mt-10 w-[600px] border-solid mr-5"
     columns={columns}
     dataSource={data}
     bordered

@@ -1,61 +1,112 @@
-import { Avatar, Menu, ConfigProvider, Affix } from "antd";
+import React, { useState } from "react";
 import {
-  FileOutlined,
-  KeyOutlined,
-  LogoutOutlined,
-  UserAddOutlined,
+  AppstoreOutlined,
+  ContainerOutlined,
+  DesktopOutlined,
+  MailOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  PieChartOutlined,
 } from "@ant-design/icons";
-import routes from "@/routes";
-
-const Sidebar = ({ selectedKey, handleMenuClick }) => {
-  const items = [
-    {
-      label: "داشبورد",
-      key: routes.dashboardPagePath,
-      icon: <FileOutlined />,
-    },
-    {
-      label: "داروها",
-      key: routes.medicinePagePath,
-      icon: <UserAddOutlined />,
-    },
-    // {
-    //   label: "خروج",
-    //   key: "logout",
-    //   icon: <LogoutOutlined />,
-    // },
-  ];
-
+import { Button, Menu } from "antd";
+const items = [
+  {
+    key: "1",
+    icon: <PieChartOutlined />,
+    label: "Option 1",
+  },
+  {
+    key: "2",
+    icon: <DesktopOutlined />,
+    label: "Option 2",
+  },
+  {
+    key: "3",
+    icon: <ContainerOutlined />,
+    label: "Option 3",
+  },
+  {
+    key: "sub1",
+    label: "Navigation One",
+    icon: <MailOutlined />,
+    children: [
+      {
+        key: "5",
+        label: "Option 5",
+      },
+      {
+        key: "6",
+        label: "Option 6",
+      },
+      {
+        key: "7",
+        label: "Option 7",
+      },
+      {
+        key: "8",
+        label: "Option 8",
+      },
+    ],
+  },
+  {
+    key: "sub2",
+    label: "Navigation Two",
+    icon: <AppstoreOutlined />,
+    children: [
+      {
+        key: "9",
+        label: "Option 9",
+      },
+      {
+        key: "10",
+        label: "Option 10",
+      },
+      {
+        key: "sub3",
+        label: "Submenu",
+        children: [
+          {
+            key: "11",
+            label: "Option 11",
+          },
+          {
+            key: "12",
+            label: "Option 12",
+          },
+        ],
+      },
+    ],
+  },
+];
+const Sidebar = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
   return (
-    <div className="flex flex-col items-stretch h-full bg-gray-900">
-      <Affix offsetTop={0}>
-        <div className="flex flex-col items-center">
-          <Avatar
-            size={80}
-            src="/src/assets/images/pharmacy.png"
-            alt="pharmacy"
-            className="mt-8 rounded-none"
-
-          />
-          <h3 className="font-bold text-[1rem] text-white mt-2">
-            داروخانه
-          </h3>
-        </div>
-      </Affix>
-      <ConfigProvider direction="rtl">
-        <div className="disable-scrollbar h-full">
-          <Menu
-            selectedKeys={[selectedKey]}
-            onClick={handleMenuClick}
-            items={items}
-            mode="inline"
-            theme='dark'
-            className="mt-4 w-full border-none text-white"
-          />
-        </div>
-      </ConfigProvider>
+    <div
+      style={{
+        width: 256,
+      }}
+    >
+      <Button
+        type="primary"
+        onClick={toggleCollapsed}
+        style={{
+          marginBottom: 16,
+        }}
+      >
+        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      </Button>
+      <Menu
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
+        mode="inline"
+        theme="dark"
+        inlineCollapsed={collapsed}
+        items={items}
+      />
     </div>
   );
 };
-
 export default Sidebar;

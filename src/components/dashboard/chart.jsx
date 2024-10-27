@@ -23,17 +23,17 @@ export default function BasicPie() {
           height={200}
         />
       </div>
-      <div className="mt-10 bg-slate-600 w-auto mr-3 rounded">
+      <div className="mt-10 bg-slate-600 w-auto mr-3 rounded ml-3">
         <BarChart
           xAxis={[
-            { scaleType: "band", data: ["group A", "group B", "group C"] },
+            { scaleType: "band", data: ["group A", "group B", "group C", "group D", "group E", "group F"] },
           ]}
           series={[
-            { data: [4, 3, 5] },
-            { data: [1, 6, 3] },
-            { data: [2, 5, 6] },
+            { data: [4, 3, 5, 1, 2, 3] },
+            { data: [1, 6, 3, 5, 1, 6] },
+            { data: [2, 5, 6, 1, 4, 3] },
           ]}
-          width={400}
+          width={700}
           height={300}
         />
       </div>

@@ -124,7 +124,7 @@ div {
 }
 
 body {
-  background-color: var(--p-bg-color) !important;
+  background-color: #191919 !important;
 }
 svg {
   vertical-align: baseline;

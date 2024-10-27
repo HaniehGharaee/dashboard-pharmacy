@@ -36,35 +36,44 @@ const Dashboard = ({ children }) => {
   };
 
   return (
-    <Layout className="h-full min-h-screen">
-      {!isMobile ? (
-        <Sider
-          width={220}
-          className="h-full fixed right-0 top-0 bg-slate-900 shadow-md"
-        >
-          <Sidebar
-            selectedKey={selectedKey}
-            handleMenuClick={handleMenuClick}
-          />
-        </Sider>
-      ) : (
-        <MobileDrawer
-          drawerVisible={drawerVisible}
-          toggleDrawer={toggleDrawer}
-          selectedKey={selectedKey}
-          handleMenuClick={handleMenuClick}
-        />
-      )}
+    // <Layout //className="h-full min-h-screen "
+    // //className=" min-h-screen"
+    // >
+    //   {/* {!isMobile ? ( */}
+    //   {/* <Sider
+    //   // width={220}
+    //   // className="h-full fixed right-0 top-0 shadow-md "
+    //   // style={{ backgroundColor: "#002357" }}
+    //   >
+    //     <Sidebar
+    //     //selectedKey={selectedKey} handleMenuClick={handleMenuClick}
+    //     />
+    //   </Sider>
+    //   <Sidebar /> */}
+    //   {/* ) : (
+    //     <MobileDrawer
+    //       drawerVisible={drawerVisible}
+    //       toggleDrawer={toggleDrawer}
+    //       selectedKey={selectedKey}
+    //       handleMenuClick={handleMenuClick}
+    //     />
+    //   )} */}
 
-      <Layout
-        className="h-full min-h-screen"
-        style={{ marginRight: isMobile ? 0 : 220 }}
-      >
-        <Content className="h-full overflow-y-auto">
-          <div className="mt-6">{children}</div>
-        </Content>
-      </Layout>
-    </Layout>
+    //   {/* <Layout
+    //   //className="h-full min-h-screen "
+    //   //style={{ marginRight: isMobile ? 0 : 220 }}
+    //   >
+    //     <Content className="h-full overflow-y-auto">
+    //       <div className="mt-6">{children}</div>
+    //     </Content>
+    //   </Layout> */}
+    // </Layout>
+    <div>
+    {/* <Content className="h-full overflow-y-auto"> */}
+      {/* <Sidebar className="h-full fixed right-0 top-0 shadow-md" /> */}
+      <div className="mt-6">{children}</div>
+    {/* </Content> */}
+    </div>
   );
 };
 
