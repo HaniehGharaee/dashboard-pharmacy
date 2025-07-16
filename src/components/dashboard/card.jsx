@@ -1,92 +1,70 @@
 import { Card, Col, Row } from "antd";
-import "./card.less";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-import { drugsIcon } from "src/assets/icons/index";
-import { instockIcon } from "src/assets/icons/index";
-const { Meta } = Card;
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
-const CardsDashboatds = () => {
-  const colProps = {
-    xs: 12,
-    sm: 24,
-    md: 24,
-    lg: 16,
-    xl: 24,
-  };
+const stats = [
+  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
+  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
+  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
+  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
+  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
+  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
+  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
+  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
+  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
+  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
+  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
+  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
+  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
+  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
+  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
+  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
+];
+
+const CardsDashboard = () => {
   return (
-    <>
-      <Row
-        gutter={[8, 8]}
-        justify="center"
-        className="md:grid gap-4 md:grid-cols-4 mx-2"
-      >
-        <Col {...colProps}>
-          <Card
-            title="داروهای منقضی شده"
-            bordered={true}
-            className="border-white-900 rounded-lg"
-            extra={
-              <div className="square1 mb-3 flex items-center justify-center">
-                <CalendarMonthIcon sx={{ fontSize: 35 }} />
-              </div>
-            }
-          >
-            <Meta title="191" />
-            <div
-              style={{ textAlign: "left", color: "blue", marginTop: "auto" }}
+    <div className="max-w-[1300px] mx-auto px-3">
+      <Row gutter={[12, 12]}>
+        {stats.map((item, index) => (
+          <Col key={index} xs={24} sm={12} md={8} lg={6} xl={6}>
+            <Card
+              bordered={false}
+              bodyStyle={{
+                padding: "12px 16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                height: 80,
+                background: "#f9f9f9",
+                borderRadius: 10,
+              }}
             >
-              نمایش بیشتر
-            </div>
-          </Card>
-        </Col>
-        <Col {...colProps}>
-          <Card
-            title="سهام دارو"
-            bordered={true}
-            className="border-white-900 rounded-lg"
-            extra={
-              <div className="square2 mb-3 flex items-center justify-center">
-                <img src={instockIcon} alt="stock Icon" className="h-10 w-10" />
+              <div>
+                <div style={{ fontSize: 14, color: "#666" }}>{item.title}</div>
+                <div style={{ fontSize: 20, fontWeight: "bold" }}>{item.value}</div>
               </div>
-            }
-          >
-            <Meta title="691" />
-            <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
-          </Card>
-        </Col>
-        <Col {...colProps}>
-          <Card
-            title="کل داروها"
-            bordered={true}
-            className="border-white-900 rounded-lg"
-            extra={
-              <div className="square3 mb-3 flex items-center justify-center">
-                <img src={drugsIcon} alt="Drugs Icon" className="h-10 w-10" />
+              <div
+                style={{
+                  backgroundColor: item.color,
+                  width: 40,
+                  height: 40,
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#fff",
+                }}
+              >
+                {item.icon}
               </div>
-            }
-          >
-            <Meta title="812" />
-            <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
-          </Card>
-        </Col>
-        <Col {...colProps}>
-          <Card
-            title="کل فروش"
-            bordered={true}
-            className="border-white-900 rounded-lg"
-            extra={
-              <div className="square4 mb-3 flex items-center justify-center">
-                <MonetizationOnOutlinedIcon sx={{ fontSize: 35 }} />
-              </div>
-            }
-          >
-            <Meta title="261" />
-            <div style={{ textAlign: "left", color: "blue" }}>نمایش بیشتر</div>
-          </Card>
-        </Col>
+            </Card>
+          </Col>
+        ))}
       </Row>
-    </>
+    </div>
   );
 };
-export default CardsDashboatds;
+
+export default CardsDashboard;
