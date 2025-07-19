@@ -1,17 +1,20 @@
 import PropTypes from 'prop-types';
 import { Outlet } from 'react-router-dom';
-import { HeaderPublic } from './Header';
+import HeaderPublic from './Header';
 
-export const PublicLayout = () => {
+const PublicLayout = () => {
   return (
-    <div className='flex flex-col self-stretch min-h-screen'>
+    <div className="flex flex-col min-h-screen">
       <HeaderPublic />
-      <div className='flex flex-col flex-1 max-w-screen-xl px-4 mx-auto w-full'>
-        <main className=''>{<Outlet />}</main>
-      </div>
+      <main className="flex-1">
+        <div className="max-w-[1300px] mx-auto px-3 py-4">
+          <Outlet />
+        </div>
+      </main>
     </div>
   );
 };
+
 PublicLayout.propTypes = {
   children: PropTypes.node,
 };
