@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import { Outlet } from 'react-router-dom';
-import HeaderPublic from './Header';
+import PropTypes from "prop-types";
+import { Outlet } from "react-router-dom";
+import HeaderPublic from "./Header";
 
 const PublicLayout = () => {
   return (
