@@ -2,12 +2,19 @@ import { useState, useEffect } from "react";
 import DateDisplay from "./DateDisplay";
 import irflag from "@/assets/images/irflag.png";
 import ukflag from "@/assets/images/ukflag.png";
-import { Button, Popover } from "antd";
-import { GlobalOutlined, BellOutlined } from "@ant-design/icons";
+import { Badge, Popover } from "antd";
+import {
+  GlobalOutlined,
+  BellOutlined,
+  CalendarOutlined,
+} from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar, Space, Dropdown } from "antd";
 
 const HeaderPublic = () => {
   const [currentLanguage, setCurrentLanguage] = useState("fa" || "en");
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const toggleIsOpen = () => setIsOpen((o) => !o);
   const changeLanguage = (language) => {
     setCurrentLanguage(language);
@@ -17,16 +24,60 @@ const HeaderPublic = () => {
     // dispatch(setDirection(language));
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const renderNotificationItems = () => [
+    {
+      label: (
+        <div>
+          <h3 className="flex gap-2 mb-2">
+            medicineNear<h3 className="text-red-700">expire</h3> <span>:</span>
+          </h3>
+        </div>
+      ),
+      key: "expired",
+      //icon: <img src={routine} alt="Routine Icon" className="w-10" />,
+    },
+  ];
+
   return (
-    <div className="sticky top-0 z-50 w-3/4 mx-auto bg-white shadow px-6 py-4">
+    <div
+      className={`sticky top-0 z-50 w-3/4 mx-auto bg-stone-200 transition-shadow px-6 py-4 ${
+        scrolled ? "shadow-lg" : ""
+      }`}
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <button
-            onClick={toggleIsOpen}
-            className="p-0 bg-transparent border-none outline-none flex items-center"
-          >
-            <BellOutlined style={{ fontSize: "23px", color: "#1C73D4" }} />
-          </button>
+          <Space wrap size={16}>
+            <Avatar size="large" icon={<UserOutlined />} />
+          </Space>
+          <div className="p-0 bg-transparent border-none outline-none flex items-center">
+            <Dropdown
+              placement="bottomRight"
+              trigger={["click"]}
+              menu={{ items: renderNotificationItems() }}
+              dropdownRender={(menu) => (
+                <div
+                  className="max-h-[200px] w-full overflow-y-auto border-b p-2"
+                  style={{ backgroundColor: "#f0f2f5" }}
+                >
+                  {menu}
+                </div>
+              )}
+            >
+              <Badge count={12}>
+                <BellOutlined style={{ fontSize: "23px", color: "#1C73D4" }} />
+              </Badge>
+            </Dropdown>
+          </div>
           <Popover
             content={
               <ul className="p-2 mb-0">
@@ -72,8 +123,9 @@ const HeaderPublic = () => {
             <GlobalOutlined className="!text-[#1c73d4] text-xl cursor-pointer" />
           </Popover>
         </div>
-        <div className="text-xl font-semibold text-gray-800">
+        <div className="flex justify-end items-center gap-x-2 text-xl font-semibold text-gray-800">
           <DateDisplay />
+          <CalendarOutlined className="mb-2" />
         </div>
       </div>
     </div>
