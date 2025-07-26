@@ -50,7 +50,7 @@ const HeaderPublic = () => {
 
   return (
     <div
-      className={`sticky top-0 z-50 w-3/4 mx-auto bg-stone-200 transition-shadow px-6 py-4 ${
+      className={`sticky top-0 z-50 w-full bg-stone-200 transition-shadow px-6 py-4 ${
         scrolled ? "shadow-lg" : ""
       }`}
     >
