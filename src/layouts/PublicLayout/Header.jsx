@@ -10,8 +10,9 @@ import {
 } from "@ant-design/icons";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Space, Dropdown } from "antd";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
-const HeaderPublic = () => {
+const HeaderPublic = ({ collapsed, setCollapsed }) => {
   const [currentLanguage, setCurrentLanguage] = useState("fa" || "en");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -54,6 +55,10 @@ const HeaderPublic = () => {
         scrolled ? "shadow-lg" : ""
       }`}
     >
+      <button onClick={() => setCollapsed(!collapsed)} className="text-xl mr-2">
+        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      </button>
+
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Space wrap size={16}>
