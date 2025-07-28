@@ -10,7 +10,7 @@ const App = () => {
   return (
     // <Provider store={store}>
     <ConfigProvider
-      direction="rtl"
+      direction="ltr"
       theme={{
         token: {
           colorPrimary: "#4c8fed",
@@ -29,7 +29,7 @@ const App = () => {
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
-        rtl={true}
+        ltr={true}
         pauseOnFocusLoss={false}
         draggable
         pauseOnHover

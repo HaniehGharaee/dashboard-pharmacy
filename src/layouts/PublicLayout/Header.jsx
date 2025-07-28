@@ -10,9 +10,8 @@ import {
 } from "@ant-design/icons";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Space, Dropdown } from "antd";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
-const HeaderPublic = ({ collapsed, setCollapsed }) => {
+const HeaderPublic = () => {
   const [currentLanguage, setCurrentLanguage] = useState("fa" || "en");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -51,38 +50,16 @@ const HeaderPublic = ({ collapsed, setCollapsed }) => {
 
   return (
     <div
-      className={`sticky top-0 z-50 w-full bg-stone-200 transition-shadow px-6 py-4 ${
+      className={`sticky top-0 z-50 w-3/4 mx-auto bg-stone-200 transition-shadow px-6 py-4 ${
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <button onClick={() => setCollapsed(!collapsed)} className="text-xl mr-2">
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </button>
-
       <div className="flex items-center justify-between">
+        <div className="flex justify-end items-center gap-x-2 text-xl font-semibold text-gray-800">
+          <CalendarOutlined className="mb-2" />
+          <DateDisplay />
+        </div>
         <div className="flex items-center gap-3">
-          <Space wrap size={16}>
-            <Avatar size="large" icon={<UserOutlined />} />
-          </Space>
-          <div className="p-0 bg-transparent border-none outline-none flex items-center">
-            <Dropdown
-              placement="bottomRight"
-              trigger={["click"]}
-              menu={{ items: renderNotificationItems() }}
-              dropdownRender={(menu) => (
-                <div
-                  className="max-h-[200px] w-full overflow-y-auto border-b p-2"
-                  style={{ backgroundColor: "#f0f2f5" }}
-                >
-                  {menu}
-                </div>
-              )}
-            >
-              <Badge count={12}>
-                <BellOutlined style={{ fontSize: "23px", color: "#1C73D4" }} />
-              </Badge>
-            </Dropdown>
-          </div>
           <Popover
             content={
               <ul className="p-2 mb-0">
@@ -127,10 +104,28 @@ const HeaderPublic = ({ collapsed, setCollapsed }) => {
           >
             <GlobalOutlined className="!text-[#1c73d4] text-xl cursor-pointer" />
           </Popover>
-        </div>
-        <div className="flex justify-end items-center gap-x-2 text-xl font-semibold text-gray-800">
-          <DateDisplay />
-          <CalendarOutlined className="mb-2" />
+          <div className="p-0 bg-transparent border-none outline-none flex items-center">
+            <Dropdown
+              placement="bottomRight"
+              trigger={["click"]}
+              menu={{ items: renderNotificationItems() }}
+              dropdownRender={(menu) => (
+                <div
+                  className="max-h-[200px] w-full overflow-y-auto border-b p-2"
+                  style={{ backgroundColor: "#f0f2f5" }}
+                >
+                  {menu}
+                </div>
+              )}
+            >
+              <Badge count={3}>
+                <BellOutlined style={{ fontSize: "23px", color: "#1C73D4" }} />
+              </Badge>
+            </Dropdown>
+          </div>
+          <Space wrap size={16}>
+            <Avatar size="large" icon={<UserOutlined />} />
+          </Space>
         </div>
       </div>
     </div>

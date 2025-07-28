@@ -84,8 +84,8 @@ html,
 body {
   width: 100% !important;
   height: 100%;
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
   font-family: YekanBakh-Medium !important;
 }
 
@@ -124,7 +124,7 @@ div {
 }
 
 body {
-  background-color: #191919 !important;
+  background-color: #e2e2e2 !important;
 }
 svg {
   vertical-align: baseline;
