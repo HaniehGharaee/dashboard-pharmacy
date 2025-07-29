@@ -5,22 +5,102 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
 const stats = [
-  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
-  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
-  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
-  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
-  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
-  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
-  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
-  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
-  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
-  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
-  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
-  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
-  { title: "کل فروش", value: "261", icon: <MonetizationOnOutlinedIcon />, color: "#2196f3" },
-  { title: "فروش امروز", value: "12", icon: <CalendarMonthIcon />, color: "#4caf50" },
-  { title: "موجودی", value: "530", icon: <InventoryIcon />, color: "#ff9800" },
-  { title: "مشتریان", value: "118", icon: <PeopleAltIcon />, color: "#e91e63" },
+  {
+    title: " Total Suppliers",
+    value: "261",
+    icon: <MonetizationOnOutlinedIcon />,
+    color: "#2196f3",
+  },
+  {
+    title: "Total Product Sale",
+    value: "12",
+    icon: <CalendarMonthIcon />,
+    color: "#4caf50",
+  },
+  {
+    title: "Total Medicines",
+    value: "530",
+    icon: <InventoryIcon />,
+    color: "#ff9800",
+  },
+  {
+    title: "Total Customers",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
+  {
+    title: " Total Suppliers",
+    value: "261",
+    icon: <MonetizationOnOutlinedIcon />,
+    color: "#2196f3",
+  },
+  {
+    title: "Total Product Sale ",
+    value: "12",
+    icon: <CalendarMonthIcon />,
+    color: "#4caf50",
+  },
+  {
+    title: "Total Medicines",
+    value: "530",
+    icon: <InventoryIcon />,
+    color: "#ff9800",
+  },
+  {
+    title: "Total Customers",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
+  {
+    title: "Total Suppliers ",
+    value: "261",
+    icon: <MonetizationOnOutlinedIcon />,
+    color: "#2196f3",
+  },
+  {
+    title: "Total Product Sale ",
+    value: "12",
+    icon: <CalendarMonthIcon />,
+    color: "#4caf50",
+  },
+  {
+    title: "Total Medicines",
+    value: "530",
+    icon: <InventoryIcon />,
+    color: "#ff9800",
+  },
+  {
+    title: "Total Customers",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
+  {
+    title: " Total Suppliers",
+    value: "261",
+    icon: <MonetizationOnOutlinedIcon />,
+    color: "#2196f3",
+  },
+  {
+    title: "Total Product Sale ",
+    value: "12",
+    icon: <CalendarMonthIcon />,
+    color: "#4caf50",
+  },
+  {
+    title: "Total Suppliers",
+    value: "530",
+    icon: <InventoryIcon />,
+    color: "#ff9800",
+  },
+  {
+    title: "Total Customers",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
 ];
 
 const CardsDashboard = () => {
@@ -43,7 +123,9 @@ const CardsDashboard = () => {
             >
               <div>
                 <div style={{ fontSize: 14, color: "#666" }}>{item.title}</div>
-                <div style={{ fontSize: 20, fontWeight: "bold" }}>{item.value}</div>
+                <div style={{ fontSize: 20, fontWeight: "bold" }}>
+                  {item.value}
+                </div>
               </div>
               <div
                 style={{
