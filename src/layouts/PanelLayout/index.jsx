@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import { Sidebar } from "@/layouts/PanelLayout/sidebar";
 import HeaderPublic from "../PublicLayout/Header";
 import { theme } from "antd";
@@ -11,19 +12,9 @@ const PanelLayout = () => {
   return (
     <div style={{ display: "flex" }}>
       <Sidebar collapsed={collapsed} />
-      <div style={{ flex: 1}}>
+      <div style={{ flex: 1 }}>
         <HeaderPublic collapsed={collapsed} setCollapsed={setCollapsed} />
-        <main
-          style={{
-            margin: "24px 16px",
-            padding: 24,
-            minHeight: 800,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          Content
-        </main>
+        <Outlet />
       </div>
     </div>
   );
