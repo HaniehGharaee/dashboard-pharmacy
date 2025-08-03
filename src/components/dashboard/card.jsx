@@ -101,6 +101,18 @@ const stats = [
     icon: <PeopleAltIcon />,
     color: "#e91e63",
   },
+  {
+    title: "Total Customers",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
+  {
+    title: "Total Customers",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
 ];
 
 const CardsDashboard = () => {
@@ -115,18 +127,12 @@ const CardsDashboard = () => {
                 padding: "12px 16px",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
+                justifyContent: "flex-start", //start from left
                 height: 80,
                 background: "#f9f9f9",
                 borderRadius: 10,
               }}
             >
-              <div>
-                <div style={{ fontSize: 14, color: "#666" }}>{item.title}</div>
-                <div style={{ fontSize: 20, fontWeight: "bold" }}>
-                  {item.value}
-                </div>
-              </div>
               <div
                 style={{
                   backgroundColor: item.color,
@@ -137,9 +143,21 @@ const CardsDashboard = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   color: "#fff",
+                  marginRight: 12
                 }}
               >
                 {item.icon}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <div style={{ fontSize: 14, color: "#666" }}>{item.title}</div>
+                <div style={{ fontSize: 20, fontWeight: "bold" }}>
+                  {item.value}
+                </div>
               </div>
             </Card>
           </Col>
