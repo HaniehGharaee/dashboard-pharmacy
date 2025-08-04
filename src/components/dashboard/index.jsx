@@ -4,6 +4,7 @@ const Dashboard = () => {
   return (
     <div className="h-full min-h-screen">
       <CardsDashboatds />
+      {/* <BasicPie/> */}
       {/* <div className="mt-10 mb-8">
         <PieChart />
       </div> */}
