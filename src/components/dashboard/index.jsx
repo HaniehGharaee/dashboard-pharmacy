@@ -1,14 +1,14 @@
 import CardsDashboatds from "./card";
-import PieChart from "./chart";
+import SalesProcess from "./chart";
+
 const Dashboard = () => {
   return (
-    <div className="h-full min-h-screen">
-      <CardsDashboatds />
-      {/* <BasicPie/> */}
-      {/* <div className="mt-10 mb-8">
-        <PieChart />
-      </div> */}
-    </div>
+    <>
+      <div className="h-full min-h-screen">
+        <CardsDashboatds />
+        <SalesProcess />
+      </div>
+    </>
   );
 };
 
