@@ -1,60 +1,38 @@
-import * as React from "react";
-import { Card, Col, Row } from "antd";
-import { PieChart } from "@mui/x-charts/PieChart";
-import { BarChart } from "@mui/x-charts/BarChart";
-import { LineChart } from "@mui/x-charts/LineChart";
-import ReportTable from "./Today'sReport";
+import { useState } from 'react';
+import ReactEchartsCustom from '@/components/Chart';
+import { BarOptions } from '@/components/Chart/options';
 
-const BasicPie = () => {
+const SalesProcess = () => {
+  const [appointemtData, setAppointmentData] = useState([
+    {
+      name: 'April',
+      value: '50',
+    },
+    {
+      name: 'May',
+      value: '35',
+    },
+    {
+      name: 'June',
+      value: '40',
+    },
+    {
+      name: 'July ',
+      value: '10',
+    },
+  ]);
+
   return (
-    <Row className="grid grid-cols-2 gap-0">
-      {/* <div className="mt-10 w-auto mr-3 rounded ml-3">
-        <BarChart
-          xAxis={[
-            {
-              scaleType: "band",
-              data: [
-                "group A",
-                "group B",
-                "group C",
-                "group D",
-                "group E",
-                "group F",
-              ],
-            },
-          ]}
-          series={[
-            { data: [4, 3, 5, 1, 2, 3] },
-            { data: [1, 6, 3, 5, 1, 6] },
-            { data: [2, 5, 6, 1, 4, 3] },
-          ]}
-          width={700}
-          height={300}
+    <>
+      <div className=" ">
+        <ReactEchartsCustom
+          option={BarOptions({
+            title: 'sale',
+            data: appointemtData || [],
+          })}
         />
-      </div> */}
-      {/* <div className="mt-10 bg-slate-600 w-auto mr-3 h-80 pt-20 rounded">
-        <LineChart
-          xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
-          series={[
-            {
-              data: [2, 5.5, 2, 8.5, 1.5, 5],
-              valueFormatter: (value) =>
-                value == null ? "NaN" : value.toString(),
-            },
-            {
-              data: [null, null, null, null, 5.5, 2, 8.5, 1.5, 5],
-            },
-            {
-              data: [7, 8, 5, 4, null, null, 2, 5.5, 1],
-              valueFormatter: (value) =>
-                value == null ? "?" : value.toString(),
-            },
-          ]}
-          height={200}
-          margin={{ top: 10, bottom: 20 }}
-        />
-      </div> */}
-    </Row>
+      </div>
+    </>
   );
 };
-export default BasicPie;
+export default SalesProcess;
