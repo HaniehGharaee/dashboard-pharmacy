@@ -24,7 +24,7 @@ const SalesProcess = () => {
 
   return (
     <>
-      <div className=" ">
+      <div>
         <ReactEchartsCustom
           option={BarOptions({
             title: 'sale',
