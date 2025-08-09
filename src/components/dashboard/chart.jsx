@@ -3,7 +3,7 @@ import ReactEchartsCustom from '@/components/Chart';
 import { BarOptions } from '@/components/Chart/options';
 
 const SalesProcess = () => {
-  const [appointemtData, setAppointmentData] = useState([
+  const [saleData, setSaleData] = useState([
     {
       name: 'April',
       value: '50',
@@ -28,7 +28,7 @@ const SalesProcess = () => {
         <ReactEchartsCustom
           option={BarOptions({
             title: 'sale',
-            data: appointemtData || [],
+            data: saleData || [],
           })}
         />
       </div>
