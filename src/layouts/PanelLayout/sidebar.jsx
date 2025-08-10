@@ -14,6 +14,7 @@ export const Sidebar = ({ collapsed }) => {
         transition: "width 0.3s",
         background: "#191919",
         height: "100vh",
+        position: "fixed",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
