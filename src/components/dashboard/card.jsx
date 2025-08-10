@@ -117,7 +117,7 @@ const stats = [
 
 const CardsDashboard = () => {
   return (
-    <div className="max-w-[1300px] mx-auto px-3">
+    <div className="max-w-[1300px]">
       <Row gutter={[12, 12]}>
         {stats.map((item, index) => (
           <Col key={index} xs={24} sm={12} md={8} lg={6} xl={6}>

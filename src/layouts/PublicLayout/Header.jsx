@@ -11,7 +11,7 @@ import {
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Space, Dropdown } from "antd";
 
-const HeaderPublic = () => {
+const HeaderPublic = ({ collapsed }) => {
   const [currentLanguage, setCurrentLanguage] = useState("fa" || "en");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -48,11 +48,19 @@ const HeaderPublic = () => {
     },
   ];
 
+  const sidebarWidth = collapsed ? 80 : 200;
+
   return (
     <div
-      className={`sticky top-0 z-50 w-3/4 mx-auto bg-stone-200 transition-shadow px-6 py-4 ${
+      className={`sticky top-0 z-50 bg-stone-200 transition-shadow py-4 ${
         scrolled ? "shadow-lg" : ""
       }`}
+      style={{
+        paddingLeft: 40,
+        paddingRight: 40,
+        marginLeft: sidebarWidth + 40,
+        marginRight: 40,
+      }}
     >
       <div className="flex items-center justify-between">
         <div className="flex justify-end items-center gap-x-2 text-xl font-semibold text-gray-800">
