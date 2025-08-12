@@ -1,6 +1,8 @@
 import CardsDashboatds from "./card";
 import SalesProcess from "./chart";
 import NumberOfCustomers from "./customerChart";
+import ProductSale from "./ProductSale";
+import Earning from "./Earning";
 
 const Dashboard = () => {
   const sidebarWidth = 100;
@@ -10,7 +12,7 @@ const Dashboard = () => {
   return (
     <div
       style={{
-        paddingLeft: sidebarWidth + headerLeftMargin, 
+        paddingLeft: sidebarWidth + headerLeftMargin,
         paddingTop: headerHeight,
         paddingRight: 40,
         minHeight: "100vh",
@@ -18,12 +20,16 @@ const Dashboard = () => {
     >
       <div className="max-w-[1200px] mx-auto px-4 ">
         <CardsDashboatds />
-        <div className="w-full bg-white grid grid-cols-1 xs:grid-cols-2 col-span-12 rounded-lg mt-4">
-          <h3 className="text-gray-950">charts</h3>
-          <div className="rounded-lg p-5">
-            <SalesProcess />
+        <div className="w-full bg-white rounded-lg mt-7">
+          <div className="p-5 bg-blue-500 w-full h-10 flex items-center rounded-t-lg">
+            <h3 className="text-gray-50">Charts</h3>
           </div>
-          <NumberOfCustomers />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
+            <SalesProcess />
+            <NumberOfCustomers />
+            <ProductSale />
+            <Earning />
+          </div>
         </div>
       </div>
     </div>
