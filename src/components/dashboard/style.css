@@ -1,0 +1,6 @@
+
+.custom-table .ant-table-thead > tr > th {
+  background-color: #cfcfcf !important; /* رنگ پس‌زمینه */
+  color: #1f2937 !important; /* رنگ متن */
+  font-weight: bold; /* ضخیم‌تر کردن متن */
+}

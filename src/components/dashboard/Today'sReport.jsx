@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "antd";
+import './style.css';
 
 const columns = [
   {
@@ -36,11 +37,15 @@ const data = [
 ];
 const ReportTable = () => (
   <Table
-    className="mt-10 w-[600px] border-solid mr-5"
+    className="custom-table mt-10 mr-5 py-5 px-5"
+    bordered
     columns={columns}
     dataSource={data}
-    bordered
     pagination={false}
+    //dataSource={categories?.data?.data?.docs}
+    //loading={isGettingProductsCategories}
+    //columns={columns}
+    scroll={{ x: 300 }}
   />
 );
 export default ReportTable;
