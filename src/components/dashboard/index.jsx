@@ -3,6 +3,7 @@ import SalesProcess from "./chart";
 import NumberOfCustomers from "./customerChart";
 import ProductSale from "./ProductSale";
 import Earning from "./Earning";
+import ReportTable from "./Today'sReport"
 
 const Dashboard = () => {
   const sidebarWidth = 100;
@@ -30,6 +31,9 @@ const Dashboard = () => {
             <ProductSale />
             <Earning />
           </div>
+        </div>
+        <div className= "w-full bg-white rounded-lg mb-7">
+          <ReportTable/>
         </div>
       </div>
     </div>
