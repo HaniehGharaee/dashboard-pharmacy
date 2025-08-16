@@ -1,46 +1,51 @@
 import React from "react";
 import { Table } from "antd";
-import './style.css';
+import "./style.css";
 
 const columns = [
   {
-    title: "Name",
-    dataIndex: "name",
-    render: (text) => <a>{text}</a>,
+    title: "#",
+    dataIndex: "#",
+    //render: (text) => <a>{text}</a>,
   },
   {
-    title: "Cash Assets",
-    className: "column-money",
-    dataIndex: "money",
-    align: "right",
+    title: "Date",
+    dataIndex: "Date",
+    align: "center",
+  },
+  {
+    title: "Invoice",
+    dataIndex: "Invoice",
+    align: "center",
+  },
+  {
+    title: "Customer",
+    dataIndex: "Customer",
+    align: "center",
+  },
+  {
+    title: "Store",
+    dataIndex: "Store",
+    align: "center",
+  },
+  {
+    title: "Price",
+    dataIndex: "Price",
+    align: "center",
+  },
+  {
+    title: "Qty",
+    dataIndex: "Qty",
+    align: "center",
   },
 ];
-const data = [
-  {
-    key: "1",
-    name: "John Brown",
-    money: "￥300,000.00",
-    //address: "New York No. 1 Lake Park",
-  },
-  {
-    key: "2",
-    name: "Jim Green",
-    money: "￥1,256,000.00",
-    //address: "London No. 1 Lake Park",
-  },
-  {
-    key: "3",
-    name: "Joe Black",
-    money: "￥120,000.00",
-    //address: "Sydney No. 1 Lake Park",
-  },
-];
+
 const ReportTable = () => (
   <Table
-    className="custom-table mt-10 mr-5 py-5 px-5"
+    className="custom-table mt-3 mr-5 py-5 px-5"
     bordered
     columns={columns}
-    dataSource={data}
+    //dataSource={}
     pagination={false}
     //dataSource={categories?.data?.data?.docs}
     //loading={isGettingProductsCategories}

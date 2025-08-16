@@ -1,114 +1,118 @@
 import { Card, Col, Row } from "antd";
+import { TableOutlined } from "@ant-design/icons";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import StoreIcon from "@mui/icons-material/Store";
+import MedicationIcon from '@mui/icons-material/Medication';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 const stats = [
   {
-    title: " Total Suppliers",
+    title: "Total Store",
     value: "261",
-    icon: <MonetizationOnOutlinedIcon />,
-    color: "#2196f3",
-  },
-  {
-    title: "Total Product Sale",
-    value: "12",
-    icon: <CalendarMonthIcon />,
+    icon: <StoreIcon />,
     color: "#4caf50",
   },
   {
     title: "Total Medicines",
     value: "530",
-    icon: <InventoryIcon />,
-    color: "#ff9800",
+    icon: <MedicationIcon />,
+    color: "#0067ff",
   },
   {
     title: "Total Customers",
-    value: "118",
-    icon: <PeopleAltIcon />,
-    color: "#e91e63",
-  },
-  {
-    title: " Total Suppliers",
-    value: "261",
-    icon: <MonetizationOnOutlinedIcon />,
-    color: "#2196f3",
-  },
-  {
-    title: "Total Product Sale ",
-    value: "12",
-    icon: <CalendarMonthIcon />,
-    color: "#4caf50",
-  },
-  {
-    title: "Total Medicines",
     value: "530",
-    icon: <InventoryIcon />,
-    color: "#ff9800",
-  },
-  {
-    title: "Total Customers",
-    value: "118",
-    icon: <PeopleAltIcon />,
-    color: "#e91e63",
-  },
-  {
-    title: "Total Suppliers ",
-    value: "261",
-    icon: <MonetizationOnOutlinedIcon />,
-    color: "#2196f3",
-  },
-  {
-    title: "Total Product Sale ",
-    value: "12",
-    icon: <CalendarMonthIcon />,
-    color: "#4caf50",
-  },
-  {
-    title: "Total Medicines",
-    value: "530",
-    icon: <InventoryIcon />,
-    color: "#ff9800",
-  },
-  {
-    title: "Total Customers",
-    value: "118",
-    icon: <PeopleAltIcon />,
-    color: "#e91e63",
-  },
-  {
-    title: " Total Suppliers",
-    value: "261",
-    icon: <MonetizationOnOutlinedIcon />,
-    color: "#2196f3",
-  },
-  {
-    title: "Total Product Sale ",
-    value: "12",
-    icon: <CalendarMonthIcon />,
-    color: "#4caf50",
+    icon: <GroupsIcon />,
+    color: "#ffea00",
   },
   {
     title: "Total Suppliers",
+    value: "118",
+    icon: <GroupsIcon />,
+    color: "#e91e63",
+  },
+  {
+    title: "Total Product Sale",
+    value: "261",
+    icon: <MonetizationOnOutlinedIcon />,
+    color: "#2196f3",
+  },
+  {
+    title: "Today Product Sale",
+    value: "12",
+    icon: <CalendarMonthIcon />,
+    color: "#4caf50",
+  },
+  {
+    title: "This Month Sale",
     value: "530",
     icon: <InventoryIcon />,
     color: "#ff9800",
   },
   {
-    title: "Total Customers",
+    title: "This Year Product Sale",
     value: "118",
     icon: <PeopleAltIcon />,
     color: "#e91e63",
   },
   {
-    title: "Total Customers",
+    title: "Total Product Purchase",
+    value: "261",
+    icon: <MonetizationOnOutlinedIcon />,
+    color: "#2196f3",
+  },
+  {
+    title: "Today Product Purchase",
+    value: "12",
+    icon: <CalendarMonthIcon />,
+    color: "#4caf50",
+  },
+  {
+    title: "This Month Purchase",
+    value: "530",
+    icon: <InventoryIcon />,
+    color: "#ff9800",
+  },
+  {
+    title: "This Year Product Purchase",
     value: "118",
     icon: <PeopleAltIcon />,
     color: "#e91e63",
   },
   {
-    title: "Total Customers",
+    title: "Total Earning",
+    value: "261",
+    icon: <MonetizationOnOutlinedIcon />,
+    color: "#2196f3",
+  },
+  {
+    title: "Today Earning",
+    value: "12",
+    icon: <CalendarMonthIcon />,
+    color: "#4caf50",
+  },
+  {
+    title: "This Month Earning",
+    value: "530",
+    icon: <InventoryIcon />,
+    color: "#ff9800",
+  },
+  {
+    title: "This Year Erning",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
+  {
+    title: "Total Categories",
+    value: "118",
+    icon: <PeopleAltIcon />,
+    color: "#e91e63",
+  },
+  {
+    title: "Total Transactions",
     value: "118",
     icon: <PeopleAltIcon />,
     color: "#e91e63",
@@ -143,7 +147,7 @@ const CardsDashboard = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   color: "#fff",
-                  marginRight: 12
+                  marginRight: 12,
                 }}
               >
                 {item.icon}
