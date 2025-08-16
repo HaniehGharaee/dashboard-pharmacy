@@ -3,7 +3,8 @@ import SalesProcess from "./chart";
 import NumberOfCustomers from "./customerChart";
 import ProductSale from "./ProductSale";
 import Earning from "./Earning";
-import ReportTable from "./Today'sReport"
+import ReportTable from "./Today'sReport";
+import { TableOutlined } from "@ant-design/icons";
 
 const Dashboard = () => {
   const sidebarWidth = 100;
@@ -32,8 +33,14 @@ const Dashboard = () => {
             <Earning />
           </div>
         </div>
-        <div className= "w-full bg-white rounded-lg mb-7">
-          <ReportTable/>
+        <div className="w-full bg-white rounded-lg mt-7">
+          <div className="p-5 w-full h-10 flex items-center rounded-t-lg">
+            <div className="text-slate-700 text-2xl mt-5">
+              <TableOutlined className="text-[#4b4b4d] pr-2 pt-2" />
+              Latest Orders
+            </div>
+          </div>
+          <ReportTable />
         </div>
       </div>
     </div>
