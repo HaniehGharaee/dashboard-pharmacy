@@ -1,9 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import config from "../config/config";
+//import config from "../config/config";
 import endpoints from "./endpoints";
 
-const base_url = config.apiUrl;
+//const base_url = '';
 
 const defaultHeaders = () => {
   const headers = {
@@ -43,7 +43,7 @@ const get = async (url, params, optionalHeaders, noError) => {
   let error;
 
   await axios
-    .get(base_url + url, {
+    .get(url, {
       params,
       headers: { ...defaultHeaders(), ...optionalHeaders },
     })
@@ -63,7 +63,7 @@ const post = async (url, params, optionalHeaders, noError) => {
   let error;
 
   await axios
-    .post(base_url + url, params, {
+    .post(url, params, {
       headers: { ...defaultHeaders(), ...optionalHeaders },
     })
     .then((res) => (data = res.data))
@@ -76,13 +76,13 @@ const post = async (url, params, optionalHeaders, noError) => {
   return { isSuccess, data, error };
 };
 
-const put = async (url, params, optionalHeaders, noError) => {
+const put = async (params, optionalHeaders, noError) => {
   let isSuccess = true;
   let data;
   let error;
 
   await axios
-    .put(base_url + url, params, {
+    .put(url, params, {
       headers: { ...defaultHeaders(), ...optionalHeaders },
     })
     .then((res) => (data = res.data))
@@ -100,7 +100,7 @@ const remove = async (url, params, optionalHeaders, noError) => {
   let data;
   let error;
 
-  await axios(base_url + url, {
+  await axios(url, {
     params,
     data: params,
     headers: { ...defaultHeaders(), ...optionalHeaders },
