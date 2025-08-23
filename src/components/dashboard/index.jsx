@@ -28,14 +28,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div
-      style={{
-        paddingLeft: sidebarWidth + headerLeftMargin,
-        paddingTop: headerHeight,
-        paddingRight: 40,
-        minHeight: "100vh",
-      }}
-    >
+    <div className="pt-[30px] pr-10 min-h-screen">
       <div className="max-w-[1200px] mx-auto px-4 ">
         <CardsDashboatds data={data} />
         <div className="w-full bg-white rounded-lg mt-7">

@@ -10,9 +10,9 @@ const PanelLayout = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   return (
-    <div style={{ display: "flex" }}>
+    <div className="flex min-h-screen">
       <Sidebar collapsed={collapsed} />
-      <div style={{ flex: 1 }}>
+      <div className="flex-1">
         <HeaderPublic collapsed={collapsed} setCollapsed={setCollapsed} />
         <Outlet />
       </div>
