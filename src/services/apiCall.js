@@ -115,5 +115,5 @@ const remove = async (url, params, optionalHeaders, noError) => {
   return { isSuccess, data, error };
 };
 
-const apiCall = { get, post, put, postForm, remove, getFile };
+const apiCall = { get, post, put, remove };
 export default apiCall;
