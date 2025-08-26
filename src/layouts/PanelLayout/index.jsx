@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "@/layouts/PanelLayout/sidebar";
 import HeaderPublic from "../PublicLayout/Header";
-import { theme } from "antd";
 
 const PanelLayout = () => {
   const [collapsed, setCollapsed] = useState(false); //for desktop
@@ -31,14 +30,12 @@ const PanelLayout = () => {
             setMobileOpen={mobileOpen}
           />
         </div>
-
-        {/* محتوا (با فاصله از هدر) */}
+        {/* context with space from header */}
         <div className="flex-1 mt-16 p-4 overflow-auto">
           <Outlet />
         </div>
       </div>
-
-      {/* موبایل: سایدبار کشویی */}
+      {/* for sidebar in mobile */}
       <div
         className={`
           md:hidden fixed inset-y-0 left-0 z-40 

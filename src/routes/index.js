@@ -1,6 +1,6 @@
 const routes = {
   //LoginPagePath: "/",
-  dashboardPagePath: "/",
+  dashboardPagePath: "/dashboard",
   medicinePagePath: "/pharmacy-medicine",
   othersPagePath: "*",
 };
