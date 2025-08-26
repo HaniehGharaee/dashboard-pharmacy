@@ -2,7 +2,7 @@ import React from "react";
 import { ConfigProvider } from "antd";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import ViewDashboard from "@/components/dashboard/index";
 import PanelLayout from "@/layouts/PanelLayout";
 
@@ -37,12 +37,10 @@ const App = () => {
       <Router>
         <Routes>
           <Route element={<PanelLayout />}>
-            <Route path="/" element={<ViewDashboard />} />
+            <Route path="/dashboard" element={<ViewDashboard />} />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
           </Route>
-          {/* <Route element={<PublicLayout />}> */}
-          {/* <Route path="/" element={<ViewDashboard />} /> */}
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
-          {/* </Route> */}
+
         </Routes>
       </Router>
     </ConfigProvider>
