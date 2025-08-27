@@ -1,9 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-//import config from "../config/config";
-import endpoints from "./endpoints";
 
-//const base_url = '';
+const baseUrl = import.meta.env.VITE_API_URL;
 
 const defaultHeaders = () => {
   const headers = {
@@ -43,7 +41,7 @@ const get = async (url, params, optionalHeaders, noError) => {
   let error;
 
   await axios
-    .get(url, {
+    .get(baseUrl + url, {
       params,
       headers: { ...defaultHeaders(), ...optionalHeaders },
     })
@@ -63,7 +61,7 @@ const post = async (url, params, optionalHeaders, noError) => {
   let error;
 
   await axios
-    .post(url, params, {
+    .post(baseUrl + url, params, {
       headers: { ...defaultHeaders(), ...optionalHeaders },
     })
     .then((res) => (data = res.data))
@@ -82,7 +80,7 @@ const put = async (params, optionalHeaders, noError) => {
   let error;
 
   await axios
-    .put(url, params, {
+    .put(baseUrl + url, params, {
       headers: { ...defaultHeaders(), ...optionalHeaders },
     })
     .then((res) => (data = res.data))
@@ -100,7 +98,7 @@ const remove = async (url, params, optionalHeaders, noError) => {
   let data;
   let error;
 
-  await axios(url, {
+  await axios(baseUrl + url, {
     params,
     data: params,
     headers: { ...defaultHeaders(), ...optionalHeaders },
