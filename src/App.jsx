@@ -2,7 +2,13 @@ import React from "react";
 import { ConfigProvider } from "antd";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import * as pathRoute from "@/constants/routePaths/RoutePaths";
 import ViewDashboard from "@/components/dashboard/index";
 import PanelLayout from "@/layouts/PanelLayout";
 
@@ -37,10 +43,12 @@ const App = () => {
       <Router>
         <Routes>
           <Route element={<PanelLayout />}>
-            <Route path="/dashboard" element={<ViewDashboard />} />
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path={pathRoute.dashboardPath} element={<ViewDashboard />} />
+            <Route
+              path={pathRoute.mainPathSlash}
+              element={<Navigate to={pathRoute.dashboardPath} />}
+            />
           </Route>
-
         </Routes>
       </Router>
     </ConfigProvider>
