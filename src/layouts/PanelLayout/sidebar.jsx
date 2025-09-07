@@ -1,8 +1,38 @@
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "antd";
 import { pharmacyIcon, homeIcon } from "@/assets/icons/index";
 import { getMenuItems } from "./sidebarMenuItems";
 
 export const Sidebar = ({ collapsed }) => {
+  const [selectedKey, setSelectedKey] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const items = getMenuItems();
+
+  useEffect(() => {
+    const findMenuItemKey = (items, pathname) => {
+      if (!items) return "";
+      for (const item of items) {
+        if (item.route === pathname) {
+          // Match against item.route
+          return item.key;
+        }
+        if (item.children) {
+          for (const child of item.children) {
+            if (child.route === pathname) {
+              // Match against child.route
+              return child.key;
+            }
+          }
+        }
+      }
+      return "";
+    };
+    const currentPathKey = findMenuItemKey(items, location.pathname);
+    setSelectedKey(currentPathKey);
+  }, [location.pathname]);
+
   return (
     <div
       style={{
@@ -35,7 +65,14 @@ export const Sidebar = ({ collapsed }) => {
         theme="dark"
         mode="inline"
         defaultSelectedKeys={["1"]}
-        items={getMenuItems()}
+        items={items}
+        selectedKeys={[selectedKey]}
+        onClick={() => {
+          const menuItem = items.find((i) => i.key === key);
+          if (menuItem?.route) {
+            navigate(menuItem.route);
+          }
+        }}
       />
     </div>
   );

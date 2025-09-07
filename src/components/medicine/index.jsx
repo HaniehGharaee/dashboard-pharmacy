@@ -1,11 +1,5 @@
-
-
 const Medicine = () => {
- 
-
-  return (
-    <></>
-  );
+  return <></>;
 };
 
 export default Medicine;
