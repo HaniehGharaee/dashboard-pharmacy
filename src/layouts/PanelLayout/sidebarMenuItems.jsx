@@ -1,5 +1,5 @@
 import * as pathRoute from "@/constants/routePaths/RoutePaths";
-import { homeIcon } from "@/assets/icons/index";
+import { homeIcon, drugsIcon } from "@/assets/icons/index";
 import {
   UploadOutlined,
   UserOutlined,
@@ -23,6 +23,21 @@ export const getMenuItems = () => {
       ),
       route: pathRoute.dashboardPath,
       label: "dashboard",
+    },
+    {
+      key: pathRoute.medicinesPath,
+      icon: (
+        <img
+          src={drugsIcon}
+          alt="Drugs Icon"
+          style={{
+            width: "20px",
+            filter: "brightness(0) saturate(100%) invert(1)",
+          }}
+        />
+      ),
+      route: pathRoute.medicinesPath,
+      label: "medicine",
     },
   ];
 };
