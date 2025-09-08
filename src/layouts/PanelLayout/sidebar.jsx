@@ -14,16 +14,13 @@ export const Sidebar = ({ collapsed }) => {
     const findMenuItemKey = (items, pathname) => {
       if (!items) return "";
       for (const item of items) {
-        if (item.route === pathname) {
-          // Match against item.route
-          return item.key;
-        }
+        // Match against item.route
+        if (item.route === pathname) return item.key;
         if (item.children) {
-          for (const child of item.children) {
-            if (child.route === pathname) {
-              // Match against child.route
-              return child.key;
-            }
+          if (item.children) {
+            const child = item.children.find((c) => c.route === pathname);
+            // Match against child.route
+            if (child) return child.key;
           }
         }
       }
@@ -67,11 +64,9 @@ export const Sidebar = ({ collapsed }) => {
         defaultSelectedKeys={["1"]}
         items={items}
         selectedKeys={[selectedKey]}
-        onClick={() => {
+        onClick={({ key }) => {
           const menuItem = items.find((i) => i.key === key);
-          if (menuItem?.route) {
-            navigate(menuItem.route);
-          }
+          if (menuItem?.route) navigate(menuItem.route);
         }}
       />
     </div>
