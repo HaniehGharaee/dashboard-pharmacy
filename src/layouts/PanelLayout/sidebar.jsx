@@ -17,11 +17,9 @@ export const Sidebar = ({ collapsed }) => {
         // Match against item.route
         if (item.route === pathname) return item.key;
         if (item.children) {
-          if (item.children) {
-            const child = item.children.find((c) => c.route === pathname);
-            // Match against child.route
-            if (child) return child.key;
-          }
+          const child = item.children.find((c) => c.route === pathname);
+          // Match against child.route
+          if (child) return child.key;
         }
       }
       return "";
@@ -29,6 +27,7 @@ export const Sidebar = ({ collapsed }) => {
     const currentPathKey = findMenuItemKey(items, location.pathname);
     setSelectedKey(currentPathKey);
   }, [location.pathname]);
+  //This effect is executed every time location.pathname changes.
 
   return (
     <div
@@ -65,7 +64,9 @@ export const Sidebar = ({ collapsed }) => {
         items={items}
         selectedKeys={[selectedKey]}
         onClick={({ key }) => {
-          const menuItem = items.find((i) => i.key === key);
+          const menuItem =
+            items.find((i) => i.key === key) ||
+            items.flatMap((i) => i.children || []).find((c) => c.key === key);
           if (menuItem?.route) navigate(menuItem.route);
         }}
       />

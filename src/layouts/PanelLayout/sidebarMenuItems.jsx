@@ -5,6 +5,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
+import { Children } from "react";
 
 export const getMenuItems = () => {
   return [
@@ -25,7 +26,7 @@ export const getMenuItems = () => {
       label: "dashboard",
     },
     {
-      key: pathRoute.medicinesPath,
+      key: "medicines",
       icon: (
         <img
           src={drugsIcon}
@@ -36,8 +37,14 @@ export const getMenuItems = () => {
           }}
         />
       ),
-      route: pathRoute.medicinesPath,
-      label: "medicine",
+      label: "Medicine",
+      children: [
+        {
+          key: pathRoute.allMedicinesPath,
+          route: pathRoute.allMedicinesPath,
+          label: "All Medicine",
+        },
+      ],
     },
   ];
 };
