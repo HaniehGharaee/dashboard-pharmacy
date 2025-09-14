@@ -45,7 +45,8 @@ const App = () => {
         <Routes>
           <Route element={<PanelLayout />}>
             <Route path={pathRoute.dashboardPath} element={<ViewDashboard />} />
-            <Route path={pathRoute.allMedicinesPath} element={<Medicines />} />
+            <Route path={pathRoute.medicineListPath} element={<Medicines />} />
+            <Route path={pathRoute.medicineAddPath} element={<Medicines />} />
             <Route
               path={pathRoute.mainPathSlash}
               element={<Navigate to={pathRoute.dashboardPath} />}

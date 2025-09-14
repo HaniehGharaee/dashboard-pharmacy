@@ -1,11 +1,10 @@
 import * as pathRoute from "@/constants/routePaths/RoutePaths";
-import { homeIcon, drugsIcon } from "@/assets/icons/index";
+import { homeIcon, drugsIcon, circleIcon } from "@/assets/icons/index";
 import {
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Children } from "react";
 
 export const getMenuItems = () => {
   return [
@@ -40,9 +39,34 @@ export const getMenuItems = () => {
       label: "Medicine",
       children: [
         {
-          key: pathRoute.allMedicinesPath,
-          route: pathRoute.allMedicinesPath,
-          label: "All Medicine",
+          key: pathRoute.medicineListPath,
+          route: pathRoute.medicineListPath,
+          label: "Medicine List",
+          icon: (
+            <img
+              src={circleIcon}
+              alt="circle Icon"
+              style={{
+                width: "16px",
+                filter: "brightness(0) saturate(100%) invert(1)",
+              }}
+            />
+          ),
+        },
+        {
+          key: pathRoute.medicineAddPath,
+          route: pathRoute.medicineAddPath,
+          label: "Medicine Add",
+          icon: (
+            <img
+              src={circleIcon}
+              alt="circle Icon"
+              style={{
+                width: "16px",
+                filter: "brightness(0) saturate(100%) invert(1)",
+              }}
+            />
+          ),
         },
       ],
     },
