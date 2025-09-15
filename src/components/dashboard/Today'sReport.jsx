@@ -49,7 +49,6 @@ const ReportTable = () => (
     pagination={false}
     //dataSource={categories?.data?.data?.docs}
     //loading={isGettingProductsCategories}
-    //columns={columns}
     scroll={{ x: 300 }}
   />
 );
