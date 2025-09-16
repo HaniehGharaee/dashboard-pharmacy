@@ -1,51 +1,55 @@
-import { Table } from "antd";
+import { Table, Tooltip } from "antd";
 import "../../components/dashboard/style.css";
+import { EditOutlined } from "@ant-design/icons";
+import { DeleteOutline } from "@mui/icons-material";
 
 const MedicineTable = () => {
   const columns = [
     {
       title: "SN",
       dataIndex: "SN",
-      //render: (text) => <a>{text}</a>,
+      render: (_text, _record, index) => {
+        return (index + 1);
+      },
     },
     {
       title: "Medicine Name",
-      dataIndex: "Medicine Name",
+      dataIndex: "medicineName",
       align: "center",
     },
     {
       title: "Generic Name",
-      dataIndex: "Generic Name",
+      dataIndex: "genericName",
       align: "center",
     },
     {
       title: "Category",
-      dataIndex: "Category",
+      dataIndex: "category",
       align: "center",
     },
     {
       title: "Supplier",
-      dataIndex: "Supplier",
+      dataIndex: "supplier",
       align: "center",
     },
     {
       title: "Unit",
-      dataIndex: "Unit",
+      dataIndex: "unit",
       align: "center",
     },
     {
       title: "Leaf",
-      dataIndex: "Leaf",
+      dataIndex: "leaf",
       align: "center",
     },
     {
       title: "Price",
-      dataIndex: "Price",
+      dataIndex: "price",
       align: "center",
     },
     {
       title: "SupplierPrice",
-      dataIndex: "SupplierPrice",
+      dataIndex: "supplierPrice",
       align: "center",
     },
     {
@@ -67,6 +71,38 @@ const MedicineTable = () => {
       title: "Action",
       dataIndex: "Action",
       align: "center",
+      key: "Action",
+      render: (text, record) => {
+        return (
+          <div className="flex w-25 gap-x-1">
+            <Tooltip title="edit" color="#0000ff">
+              <div className="text-blue-500">
+                <EditOutlined />
+              </div>
+            </Tooltip>
+            <Tooltip title="delete" color="#ff0000">
+              <div className="text-red-500">
+                <DeleteOutline />
+              </div>
+            </Tooltip>
+          </div>
+        );
+      },
+    },
+  ];
+
+  const dataSource = [
+    {
+      key: "1",
+      medicineName: 'staminophen',
+      genericName: '666666',
+      category: 'drug',
+      supplier : 'kimiaDaroo',
+      unit: '1',
+      leaf: '11',
+      price: '120000',
+      supplierPrice: '120000',
+      Images: 'Images',
     },
   ];
   return (
@@ -74,7 +110,7 @@ const MedicineTable = () => {
       className="custom-table mt-3 mr-5 py-5 px-5"
       borderedF
       columns={columns}
-      //dataSource={}
+      dataSource={dataSource}
       pagination={false}
       //dataSource={categories?.data?.data?.docs}
       //loading={isGettingProductsCategories}
