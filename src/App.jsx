@@ -11,6 +11,7 @@ import {
 import * as pathRoute from "@/constants/routePaths/RoutePaths";
 import ViewDashboard from "@/components/dashboard/index";
 import Medicines from "@/components/medicine/index";
+import AddMedicines from "@/components/medicine/medicineAdd";
 import PanelLayout from "@/layouts/PanelLayout";
 
 const App = () => {
@@ -46,7 +47,10 @@ const App = () => {
           <Route element={<PanelLayout />}>
             <Route path={pathRoute.dashboardPath} element={<ViewDashboard />} />
             <Route path={pathRoute.medicineListPath} element={<Medicines />} />
-            <Route path={pathRoute.medicineAddPath} element={<Medicines />} />
+            <Route
+              path={pathRoute.medicineAddPath}
+              element={<AddMedicines />}
+            />
             <Route
               path={pathRoute.mainPathSlash}
               element={<Navigate to={pathRoute.dashboardPath} />}
