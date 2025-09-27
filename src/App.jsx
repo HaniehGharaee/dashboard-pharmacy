@@ -11,7 +11,7 @@ import {
 import * as pathRoute from "@/constants/routePaths/RoutePaths";
 import ViewDashboard from "@/components/dashboard/index";
 import Medicines from "@/components/medicine/index";
-import AddMedicines from "@/components/medicine/medicineAdd";
+import AddMedicines from "@/components/medicine/AddMedicines";
 import PanelLayout from "@/layouts/PanelLayout";
 
 const App = () => {
