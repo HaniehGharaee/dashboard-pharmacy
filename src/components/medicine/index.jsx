@@ -1,10 +1,13 @@
 import MedicineTable from "./medicineTable";
 import { Button, Input } from "antd";
 import { PlusCircleOutlined } from "@ant-design/icons";
+import { medicineAddPath } from "@/constants/routePaths/RoutePaths";
+import { useNavigate } from "react-router-dom";
 const { Search } = Input;
 
 const Medicine = () => {
   const onSearch = (value, _e, info) => console.log(info?.source, value);
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       <div
@@ -18,8 +21,13 @@ const Medicine = () => {
       >
         <div className="flex items-center justify-between text-slate-700 text-2xl pt-3">
           Medicine List
-          <Button type="primary" size="middle">
-            <PlusCircleOutlined /> Add medicine
+          <Button
+            type="primary"
+            size="large"
+            htmlType="submit"
+            onClick={() => navigate(medicineAddPath)}
+          >
+            <PlusCircleOutlined className="mt-1" /> Add medicine
           </Button>
         </div>
         <Search

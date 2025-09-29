@@ -1,12 +1,20 @@
 import { Button, Input, Form, Row, Col, Select, Radio } from "antd";
 import { BarcodeOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const AddMedicines = () => {
+  const navigate = useNavigate();
   const onFinish = (values) => {
     console.log("Success:", values);
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
+  };
+  const normFile = (e) => {
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e?.target?.files;
   };
 
   return (
@@ -22,7 +30,7 @@ const AddMedicines = () => {
       >
         <div className="flex items-center justify-between text-slate-700 text-2xl pt-3">
           Add Medicine
-          <Button type="primary" size="middle">
+          <Button type="primary" size="middle" onClick={() => navigate(-1)}>
             Back
           </Button>
         </div>
@@ -158,28 +166,41 @@ const AddMedicines = () => {
                 <Form.Item
                   label="Image"
                   name="Image"
-                  //rules={[{ required: true, message: '' }]}
+                  valuePropName="files"
+                  getValueFromEvent={normFile}
+                  rules={[
+                    { required: true, message: "please select an image!" },
+                  ]}
                 >
-                  <Input />
+                  <Input type="file" />
                 </Form.Item>
               </Col>
             </Row>
             <Row gutter={16}>
-              {/* <Col span={8}> */}
-              <Form.Item label="Status:"/>
-                <Radio.Group className="ml-6">
-                  <Radio value="Active"> Active </Radio>
-                  <Radio value="Inactive"> Inactive </Radio>
-                </Radio.Group>
+              {/* <Col > */}
+              <Form.Item label="Status:" className="px-4" />
+              <Radio.Group className="ml-2">
+                <Radio value="Active"> Active </Radio>
+                <Radio value="Inactive"> Inactive </Radio>
+              </Radio.Group>
               {/* </Col> */}
-              {/* <Col span={8}>
-                <Form.Item label={null}>
-                  <Button type="primary" htmlType="submit">
-                    Submit
-                  </Button>
-                </Form.Item>
-              </Col> */}
             </Row>
+            <Row gutter={16}>
+              <Form.Item
+                label="Description"
+                name="Description"
+                className="w-full mb-15"
+              >
+                <Input.TextArea />
+              </Form.Item>
+            </Row>
+            <Col span={8}>
+              <Form.Item label={null}>
+                <Button type="primary" htmlType="submit" className="mb-6">
+                  Submit
+                </Button>
+              </Form.Item>
+            </Col>
           </Form>
         </div>
       </div>
