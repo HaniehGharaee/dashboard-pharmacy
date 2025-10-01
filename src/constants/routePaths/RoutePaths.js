@@ -4,6 +4,7 @@ export const dashboardPath = `${basePath}/dashboard`;
 export const medicinesPath = `${basePath}/medicines`;
 export const medicineListPath = `${basePath}/medicines/index`;
 export const medicineAddPath = `${basePath}/medicines/Add`;
+export const medicineCategoriesPath = `${basePath}/categories/index`
 export const suppliersPath = `${basePath}/suppliers`;
 export const purchasePath = `${basePath}/purchase`;
 export const salesPath = `${basePath}/sales`;
