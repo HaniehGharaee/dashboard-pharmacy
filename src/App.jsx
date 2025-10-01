@@ -12,6 +12,7 @@ import * as pathRoute from "@/constants/routePaths/RoutePaths";
 import ViewDashboard from "@/components/dashboard/index";
 import Medicines from "@/components/medicine/index";
 import AddMedicines from "@/components/medicine/AddMedicines";
+import Categories from "@/components/medicine/Categories"
 import PanelLayout from "@/layouts/PanelLayout";
 
 const App = () => {
@@ -50,6 +51,10 @@ const App = () => {
             <Route
               path={pathRoute.medicineAddPath}
               element={<AddMedicines />}
+            />
+            <Route
+              path={pathRoute.medicineCategoriesPath}
+              element={<Categories />}
             />
             <Route
               path={pathRoute.mainPathSlash}
