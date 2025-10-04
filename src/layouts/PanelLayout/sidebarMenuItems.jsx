@@ -53,21 +53,21 @@ export const getMenuItems = () => {
             />
           ),
         },
-        // {
-        //   key: pathRoute.medicineAddPath,
-        //   route: pathRoute.medicineAddPath,
-        //   label: "Medicine Add",
-        //   icon: (
-        //     <img
-        //       src={circleIcon}
-        //       alt="circle Icon"
-        //       style={{
-        //         width: "16px",
-        //         filter: "brightness(0) saturate(100%) invert(1)",
-        //       }}
-        //     />
-        //   ),
-        // },
+        {
+          key: pathRoute.medicineCategoriesPath,
+          route: pathRoute.medicineCategoriesPath,
+          label: "Categories",
+          icon: (
+            <img
+              src={circleIcon}
+              alt="circle Icon"
+              style={{
+                width: "16px",
+                filter: "brightness(0) saturate(100%) invert(1)",
+              }}
+            />
+          ),
+        },
       ],
     },
   ];
