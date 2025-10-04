@@ -12,7 +12,7 @@ import * as pathRoute from "@/constants/routePaths/RoutePaths";
 import ViewDashboard from "@/components/dashboard/index";
 import Medicines from "@/components/medicine/index";
 import AddMedicines from "@/components/medicine/AddMedicines";
-import Categories from "@/components/medicine/Categories"
+import Category from "@/components/category/index";
 import PanelLayout from "@/layouts/PanelLayout";
 
 const App = () => {
@@ -54,7 +54,7 @@ const App = () => {
             />
             <Route
               path={pathRoute.medicineCategoriesPath}
-              element={<Categories />}
+              element={<Category />}
             />
             <Route
               path={pathRoute.mainPathSlash}
