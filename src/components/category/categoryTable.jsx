@@ -9,17 +9,12 @@ const CategoryTable = () => {
       title: "SN",
       dataIndex: "SN",
       render: (_text, _record, index) => {
-        return (index + 1);
+        return index + 1;
       },
     },
     {
       title: "Category Name",
-      dataIndex: "categoryeName",
-      align: "center",
-    },
-    {
-      title: "Generic Name",
-      dataIndex: "genericName",
+      dataIndex: "Categorye Name",
       align: "center",
     },
     {
@@ -27,11 +22,11 @@ const CategoryTable = () => {
       dataIndex: "type",
       align: "center",
     },
-    // {
-    //   title: "Images",
-    //   dataIndex: "Images",
-    //   align: "center",
-    // },
+    {
+      title: "Code",
+      dataIndex: "code",
+      align: "center",
+    },
     {
       title: "Status",
       dataIndex: "status",
