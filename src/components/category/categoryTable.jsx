@@ -3,7 +3,7 @@ import "../../components/dashboard/style.css";
 import { EditOutlined } from "@ant-design/icons";
 import { DeleteOutline } from "@mui/icons-material";
 
-const CategoryTable = () => {
+const CategoryTable = ({ categories }) => {
   const columns = [
     {
       title: "SN",
@@ -14,7 +14,7 @@ const CategoryTable = () => {
     },
     {
       title: "Category Name",
-      dataIndex: "Categorye Name",
+      dataIndex: "CategoryeName",
       align: "center",
     },
     {
@@ -61,8 +61,9 @@ const CategoryTable = () => {
       className="custom-table mt-3 mr-5 py-5 px-5"
       borderedF
       columns={columns}
-      //dataSource={dataSource}
+      dataSource={categories}
       pagination={false}
+      rowKey={(record, index) => index}
       //dataSource={categories?.data?.data?.docs}
       //loading={isGettingProductsCategories}
       scroll={{ x: 300 }}
